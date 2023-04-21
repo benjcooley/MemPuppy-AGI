@@ -32,7 +32,7 @@ Inspired by the several Auto-GPT related Projects (predominently BabyAGI) and th
 7. (Timestamps are added to all memories to allow GPT to reason about time)
 
 ### The improvements of MemPuppy over Teenage-AGI are the following:
-1. Facts vectors are easier for the search to identify and include than queries and responses. Facts can be atomic memories unrelated to contextual conversation, and GPT's recall of these facts
+1. Facts vectors are easier for the search to identify and include than queries and responses. Facts can be atomic memories unrelated to contextual conversation, and GPT's recall of these facts can be more direct.
 2. A contextual memory summary helps the AI understand what the subject of the conversation is, store that in a searchable form in the database, and append and modify it as the chat progresses. This contextual memory is usually the most relevant when recovering context in later chats.
 3. Removing the ACTIONS block makes the conversation with the AI more natural.
 4. Using the entire chat context in the chat in a standard form makes the AI behave more like traditional GPT. It knows what it's previously said and it's contextual focus is the end of the chat.
