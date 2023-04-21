@@ -1,8 +1,8 @@
 # MemPuppy-AGI -- A ChatGPT which remembers who you are and everything you've talked about
 
-Derived from Teenage-AGI which was a fork of Baby-AGI.
+Derived from the very nice Teenage-AGI by [@sean_pixel](https://twitter.com/sean_pixel) which was a fork of Baby-AGI by [@yoheinakajima](https://twitter.com/yoheinakajima).
 
-## Objective
+## Objective (Teenage-AGI, MemPuppy-AGI)
 Inspired by the several Auto-GPT related Projects (predominently BabyAGI) and the Paper ["Generative Agents: Interactive Simulacra of Human Behavior"](https://arxiv.org/abs/2304.03442), this python project uses OpenAI and Pinecone to Give memory to an AI agent and also allows it to "think" before making an action (outputting text). Also, just by shutting down the AI, it doesn't forget its memories since it lives on Pinecone and its memory_counter saves the index that its on.
 
 ## Changes to Teenage-AGI for MemPuppy-AGI
@@ -59,4 +59,4 @@ docker-compose run teenage-agi
 Works just like ChatGPT in chat mode, but just remembers who you are and everything you've chatted about. Occasionally will have to ask you for a hint but usually only one. Really interesting how it behaves like an old friend who's chatting with you on the phone.
 
 ## Credits
-Thank you to seanpixel who wrote Teenage-AGI, [@yoheinakajima](https://twitter.com/yoheinakajima) who wrote Baby-AGI.
+Thank you to [@sean_pixel](https://twitter.com/sean_pixel) who wrote Teenage-AGI, [@yoheinakajima](https://twitter.com/yoheinakajima) who wrote Baby-AGI.
