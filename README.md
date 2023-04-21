@@ -19,7 +19,7 @@ Inspired by the several Auto-GPT related Projects (predominently BabyAGI) and th
 - [Credits](https://github.com/seanpixel/Teenage-AGI/blob/main/README.md#credits)
 
 ## How it Works
-# Here is what happens everytime the AI is queried by the user:
+### Here is what happens everytime the AI is queried by the user:
 1. AI vectorizes the query and stores it in a Pinecone Vector Database
 2. AI looks inside its memory and finds memories and past queries and FACTS that are relevant to the current query. If the query is the first query it searches for the user name and what the user was previously doing.
 3. AI updates it's contextual memory summary paragraph and adds it to the memory data set.
@@ -31,7 +31,7 @@ Inspired by the several Auto-GPT related Projects (predominently BabyAGI) and th
 6. AI stores the current query and its answer in its Pinecone vector database memory
 7. (Timestamps are added to all memories to allow GPT to reason about time)
 
-# The improvements of MemPuppy over Teenage-AGI are the following:
+### The improvements of MemPuppy over Teenage-AGI are the following:
 1. Facts vectors are easier for the search to identify and include than queries and responses. Facts can be atomic memories unrelated to contextual conversation, and GPT's recall of these facts
 2. A contextual memory summary helps the AI understand what the subject of the conversation is, store that in a searchable form in the database, and append and modify it as the chat progresses. This contextual memory is usually the most relevant when recovering context in later chats.
 3. Removing the ACTIONS block makes the conversation with the AI more natural.
