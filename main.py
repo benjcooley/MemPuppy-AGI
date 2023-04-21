@@ -7,22 +7,23 @@ from dotenv import load_dotenv
 load_dotenv()
 
 AGENT_NAME = os.getenv("AGENT_NAME") or "my-agent"
+USER_NAME = os.getenv("USER_NAME") or "Anonymous"
 
-agent = Agent(AGENT_NAME)
+agent = Agent(AGENT_NAME, USER_NAME)
 
 # Creates Pinecone Index
-agent.createIndex()
+agent.createIndex(AGENT_NAME)
 
-print("Talk to the AI!")
+print(agent.action(f"(I'm the system) GPT the user you will be chatting with is {USER_NAME}. Please offer friendly greeting and ask how you can help the user."))
 
 while True:
     userInput = input()
     if userInput:
         if (userInput.startswith("read:")):
-            agent.read(" ".join(userInput.split(" ")[1:]))
-            print("Understood! The information is stored in my memory.")
+            agent.read(userInput[5:].strip(" "))
+            print("Understood! The information is summarized and stored in my memory.")
         elif (userInput.startswith("think:")):
-            agent.think(" ".join(userInput.split(" ")[1:]))
+            agent.think(userInput[6:].strip(" "))
             print("Understood! I stored that thought into my memory.")
         else:
             print(agent.action(userInput), "\n")

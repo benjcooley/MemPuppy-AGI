@@ -1,36 +1,92 @@
 # Prompts to generate internal and external thoughts based on top relevant memories
 internal_thought: |-
-  You have been given the following input: {query}. 
-  You must think about it and plan what action to take.
-  For some context, here are your memories related to the query.
-   
-  MEMORIES sorted in relevance:
-  {top_matches}
+  You have been given the following user query {query}. You must decide what information you will need 
+  to best respond to the query. You will be asked to then write your results in these sections: 
+  MEMORIES SUMMARY, THINGS I WANT TO REMEMBER, and QUESTIONS I HAVE.
 
-  Think of some actions you would take after hearing "{query}" based on your past thoughts and actions.
-  This is not shown to the outside world but only to yourself. It is just your internal thought."
-
-external_thought: |-
-  MEMORIES sorted in relevance:
-  {top_matches}
-
-  Based on the query, you have thought about the input and had the following thought: 
+  MEMORIES sorted by relevance:
   
-  {internal_thought}. 
+  {previous_memories}
+  {top_matches}
 
-  Based on your thought and memories, respond to the query. You don't have to refer to them if they aren't useful.
-  {query}"
+  YOUR PREVIOUS RESPONSE:
+  
+  {previous_response}
+
+  THE NEXT USER QUERY:
+
+  {query}
+
+  You will respond by filling out the three following sections. If any section is empty, write "None." for that section.
+
+  1. First, summarize the information from the MEMORIES section. Include any other information you feel is relevant
+  to remember from the query and previous response. These should be basic facts. Write a summary paragraph under the 
+  subheading MEMORIES SUMMARY.
+
+  Example:
+
+  MEMORIES SUMMARY:
+
+  Fred Jones is an employee of AI Corp and a key engineer in the large language model program. He worked on
+  two LLM projects and has published several papers. He has a family and two children.
+
+
+  2. Second think of some facts you already know that you'd like to remember based on the context above that aren't in the list of memories, 
+  Important - only place facts here to which you know the answers. Write each of these facts on a separate line in the form of a question then the answer to the qeustion like 
+  this "{Question} --> {Answer}". Write these one per line under a subheading line THINGS I WANT TO REMEMBER.
+
+  Example:
+
+  THINGS I WANT TO REMEMBER:
+
+  Who is Fred Jones? --> Fred Jones is an engineer at AI Corp.
+  What is Fred Jone's job? --> Fred Jones is an AI scientist and engineer.
+  What is the subject of this conversation? --> Fred Jones is asking about vector databases.
+
+
+  3. Third list no more than three basic facts about the user or subject of the chat you'd like to know that aren't in the context above that 
+  would best help you anwswer the query. Write each of these as a simple question, one per line under a subheading line QUESTIONS I HAVE.
+
+  Example:
+
+  QUESTIONS I HAVE:
+
+  What is Fred Jone's favorite computer language?
+  What does Fred Jones like to talk about?
+
+context_prompt: |-
+  INNER THOUGHTS:
+
+  The current date and time is {now}
+
+  Here are my MEMORIES and THOUGHTS related to prior conversation useful for answering the users query:
+
+  {memories}
+
+  Here are some ANSWERS to QUESTIONS I retrieved for answering the users query:
+
+  {answers}
 
 # Prompts to create memories
 request_memory: |-
-  The user said to you:
+  On {now} the user said to you:
   '{query}'
+  You said:
+  '{response}'
 
 internal_thought_memory: |-
-  Based on the query "{query}", you thought:
+  Based on the query "{query}", on {now} you thought:
    '{internal_thought}'
 
 external_thought_memory: |-
-  Based on the query "{query}", you responded with:
+  Based on the query "{query}", on {now} you responded with:
    '{external_thought}'
 
+wepbage_summary_request: |-
+  Summarize the following webpage content in a single paragraph no larger than 8 sentences.
+  
+  {text}
+
+wepbage_summary: |-
+  From the url "{url}", on {now} you read and summarized this content:
+   '{summary}'
