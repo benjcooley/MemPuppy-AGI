@@ -1,4 +1,4 @@
-# MemPuppy-AGI -- A version of GPT which remembers who you are and everything you've talked about
+# MemPuppy-AGI -- A ChatGPT which remembers who you are and everything you've talked about
 
 ## Objective
 Inspired by the several Auto-GPT related Projects (predominently BabyAGI) and the Paper ["Generative Agents: Interactive Simulacra of Human Behavior"](https://arxiv.org/abs/2304.03442), this python project uses OpenAI and Pinecone to Give memory to an AI agent and also allows it to "think" before making an action (outputting text). Also, just by shutting down the AI, it doesn't forget its memories since it lives on Pinecone and its memory_counter saves the index that its on.
