@@ -9,7 +9,8 @@ Inspired by the several Auto-GPT related Projects (predominently BabyAGI) and th
 - Rewrote Teenage's memory and thinking engine to use facts summarization and contextual summarized memory.
 - Removed ACTIONS from the INTERNAL thought as it was influencing the chat and making it not consistent.
 - Simplified the EXTERNAL thoughts to avoid distracting the AI during a reply with too much contextual info.
-- Added complete chat history.
+- Complete chat history so it works like GPT, knows what you've talked about.
+- Timestamps on memories so GPT knows when you talked about what. Helps it figure out context.
 
 ### Sections
 - [How it Works](https://github.com/seanpixel/Teenage-AGI/blob/main/README.md#how-it-works)
