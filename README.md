@@ -55,10 +55,7 @@ docker-compose run teenage-agi
 ```
 
 ## Experiments
-Currently, using GPT-4, I found that it can remember its name and other characteristics. It also carries on the conversation quite well without a context window (although I might add it soon). I will update this section as I keep playing with it.
-
-## More about the Project & Me
-After reading the Simulcra paper, I made this project in my college dorm. I realized that most of the "language" that I generate are inside my head, so I thought maybe it would make sense if AGI does as well. I'm a founder currently runing a startup called [DSNR]([url](https://www.dsnr.ai/)) and also a first-year at USC. Contact me on [twitter](https://twitter.com/sean_pixel) about anything would love to chat.
+Works just like ChatGPT in chat mode, but just remembers who you are and everything you've chatted about. Occasionally will have to ask you for a hint but usually only one. Really interesting how it behaves like an old friend who's chatting with you on the phone.
 
 ## Credits
-Thank you to [@yoheinakajima](https://twitter.com/yoheinakajima) and the team behind ["Generative Agents: Interactive Simulacra of Human Behavior"](https://arxiv.org/abs/2304.03442) for the idea!
+Thank you to seanpixel who wrote Teenage-AGI, [@yoheinakajima](https://twitter.com/yoheinakajima) who wrote Baby-AGI.
